@@ -20,10 +20,12 @@ class TaskForm extends Component {
     render() {
         return (
             <form>
-                <input type="text"
+                <input 
+                    type="text"
                     placeholder="Search tasks.."
                     value={this.props.currTask}
-                    onChange={this.handleTaskinputChange} />
+                    onChange={this.handleTaskinputChange} 
+                />
                 <br />
                 <label>
                     Show only completed

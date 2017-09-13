@@ -8,18 +8,19 @@ class ToDoForm extends Component {
     }
 
     handleTaskSubmitChange(event) {
-        event.preventDefault();
-        this.props.onTaskSubmit(event.target.task.value);
-        event.target.task.value = '';
+        var ENTER_KEY = 13;
+        if (event.keyCode !== ENTER_KEY) {
+            return;
+        }
+        this.props.onTaskSubmit(event.target.value);
+        event.target.value = '';
     }
 
     render() {
         return(
             <header className="header">
                 <h1>todos</h1>
-                <form name="todoForm" onSubmit={this.handleTaskSubmitChange}>
-                    <input type="text" name="task" placeholder="What needs to be done?" />
-                </form>
+                <input type="text" placeholder="What needs to be done?" onKeyDown={this.handleTaskSubmitChange}/>
             </header>
         )
     }

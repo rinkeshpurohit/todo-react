@@ -124,6 +124,7 @@ class ToDoContainer extends Component {
                     currTab={this.state.currTab}
                     onTabChange={this.changeTab}
                     onClearCompleted={this.deleteCompletedTasks}
+                    completedCount={completed_count}
                 />
             )
 

@@ -43,12 +43,16 @@ class ToDoFooter extends Component {
                         Completed
                     </li>
                 </ul>
-                <button 
-                    className="clear"
-                    onClick={this.handleclearCompleted}
-                >
-                    Clear Completed
-                </button>
+                {  
+                    props.completedCount>0 && 
+                    
+                    <button 
+                        className="clear"
+                        onClick={this.handleclearCompleted}
+                    >
+                        Clear Completed
+                    </button>
+                }
             </footer>
         )
     }
